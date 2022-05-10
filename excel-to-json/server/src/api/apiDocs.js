@@ -14,7 +14,6 @@ apiDocs.get('/', (req, res, mext) => {
 
   // 셀의 내용만 가져온다.
   const jsonData = XLSX.utils.sheet_to_json(workSheet);
-  console.log(jsonData);
   res.send(jsonData);
 });
 
