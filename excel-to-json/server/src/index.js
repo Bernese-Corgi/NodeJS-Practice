@@ -1,10 +1,10 @@
 const express = require('express');
-const routes = require('./routes');
+const api = require('./api');
 
 const app = express();
 const port = 4000;
 
-app.use('/', routes);
+app.use('/api', api);
 
 // express 서버 띄우기
 app.listen(port, () => {
