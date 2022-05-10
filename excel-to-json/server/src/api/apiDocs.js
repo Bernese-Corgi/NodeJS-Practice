@@ -1,8 +1,10 @@
+const { Router } = require('express');
 const express = require('express');
-const router = express.Router();
 const XLSX = require('xlsx');
 
-router.get('/', (req, res, mext) => {
+const apiDocs = Router();
+
+apiDocs.get('/', (req, res, mext) => {
   const excelFile = XLSX.readFile(__dirname + '/../../public/_ApiDocs.xlsx');
   const { SheetNames, Sheets } = excelFile;
 
@@ -12,7 +14,8 @@ router.get('/', (req, res, mext) => {
 
   // 셀의 내용만 가져온다.
   const jsonData = XLSX.utils.sheet_to_json(workSheet);
+  console.log(jsonData);
   res.send(jsonData);
 });
 
-module.exports = router;
+module.exports = apiDocs;
