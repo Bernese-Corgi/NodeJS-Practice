@@ -1,0 +1,230 @@
+.youtubePlayerSection {
+  border: 1px solid black;
+  border-radius: 0.5em;
+  /* background-color: #ff634720; */
+
+  display: flex;
+  flex-flow: column;
+  padding: 1em;
+  margin: 1em;
+
+  position: relative;
+
+  box-shadow: 8px 10px 0 -5px #fabc74;
+}
+
+.title {
+  text-align: left;
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.playerSection {
+  /* width: 500px; */
+  width: 100%;
+}
+
+.playerWrapper {
+  /* width: 90vw; */
+  /* width: 100%; */
+  flex-grow: 3;
+  height: 0;
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.reactPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* ---------------------------------- controller ---------------------------------- */
+.controller {
+}
+
+.controller button {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid #00000060;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0.6em;
+  /* background-color: #ff634720; */
+  transition: ease-in-out 300ms;
+}
+
+.controller button:hover {
+  background-color: #00000015;
+}
+
+.controller .play,
+.controller .pause {
+  background-color: #fabc7499;
+  width: 40px;
+  height: 40px;
+}
+
+.controller .play:hover,
+.controller .pause:hover {
+  background-color: #fabc74;
+}
+
+/* .controller button:disabled > svg {
+  fill: gray;
+} */
+
+.player-control {
+  display: inline-block;
+  padding: 0.6em 1em;
+  border-radius: 1em;
+  background-color: #fff;
+  border: 1px solid #00000099;
+  box-shadow: 0 10px 0 -5px #2cbfbf;
+  margin: 1em;
+}
+
+.player-control button svg {
+  width: 50%;
+  height: 50%;
+  fill: #292929;
+}
+
+.playAndSkip {
+  margin: 0 1.2em;
+}
+
+/* --------------------------- open / close button -------------------------- */
+.descriptionButton {
+  background-color: transparent;
+  /* background-color: #2cbfbf60; */
+  border: none;
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1000;
+  cursor: pointer;
+
+  transition: ease-in-out 300ms;
+}
+
+.descriptionButton svg {
+  fill: black;
+  vertical-align: middle;
+  width: 80%;
+  height: 80%;
+}
+
+.close {
+  transform: rotate(90deg);
+}
+
+.open {
+  transform: rotate(-90deg);
+}
+
+.close svg {
+  fill: #fff;
+}
+
+/* ------------------------------- information ------------------------------ */
+.dim {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #00000099;
+  transition: ease-in-out 100ms;
+  opacity: 0;
+  backdrop-filter: blur(20px);
+  z-index: -1000;
+}
+
+.activeDim {
+  opacity: 1;
+  z-index: 10;
+}
+
+.information {
+  width: 60%;
+  height: 100%;
+  font-size: 12px;
+  text-align: left;
+  transition: ease-out 800ms;
+  transform: translate3d(100vw, 0, 0);
+
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+
+  background-color: #00000099;
+
+  display: flex;
+  flex-flow: column;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.activeInfo {
+  transform: translate3d(0, 0, 0);
+}
+
+.tags {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  margin: 2em;
+  margin-right: 4em;
+  width: 70%;
+}
+
+.tag {
+  list-style: none;
+  background-color: gold;
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  margin-left: 1em;
+  border-radius: 5em;
+}
+
+.tag:first-child {
+  margin-left: 0;
+}
+
+.date {
+  color: lightgray;
+  display: inline-block;
+  margin: 0 2em;
+}
+
+.tags::after {
+  content: '•';
+  margin: 0 1em;
+  color: lightgray;
+}
+
+.description {
+  text-align: left;
+  font-size: 15px;
+  color: lightgray;
+  margin: 2em;
+}
+
+.descriptionContent {
+  display: block;
+  font-size: 14px;
+  /* color: black; */
+  color: #fff;
+  padding: 5px;
+}
