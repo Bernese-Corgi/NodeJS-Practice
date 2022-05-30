@@ -13,6 +13,7 @@
     "axios": "^0.27.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-player": "^2.10.1",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "typescript": "^4.6.4",
@@ -41,5 +42,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://localhost:4000"
 }
