@@ -6,9 +6,11 @@ import './YoutubePlayer.css';
 
 const Wrapper = () => <section className="youtubePlayerSection"></section>;
 
-interface YoutubePlayerProps {}
+interface YoutubePlayerProps {
+  videoList;
+}
 
-const YoutubePlayer = ({}: YoutubePlayerProps) => {
+const YoutubePlayer = ({ videoList }: YoutubePlayerProps) => {
   /* ------------------------- video information state ------------------------ */
   interface VideoInfo {
     PublishedDate: string;
@@ -24,7 +26,6 @@ const YoutubePlayer = ({}: YoutubePlayerProps) => {
     Description: '',
   };
 
-  const [videoList, setVideoList] = useState<any[]>();
   const [videoInfo, setVideoInfo] = useState<VideoInfo>(initialVideoInfo);
   const [date, setDate] = useState<string>('');
   const [tags, setTags] = useState<string[] | null>(null);
@@ -73,17 +74,6 @@ const YoutubePlayer = ({}: YoutubePlayerProps) => {
     prevSong: () => setCurrentId(prev => (prev === 0 ? 0 : prev - 1)),
     nextSong: () => setCurrentId(prev => prev + 1),
   };
-
-  const getAllPlaylist = async () => {
-    try {
-      const res = await axios.get('/api/allPlaylist');
-      setVideoList(res.data);
-    } catch (error) {}
-  };
-
-  useEffect(() => {
-    getAllPlaylist();
-  }, []);
 
   // 다음 곡으로 넘어감
   useEffect(() => {
