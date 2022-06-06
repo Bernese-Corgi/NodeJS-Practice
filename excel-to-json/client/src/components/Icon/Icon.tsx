@@ -11,13 +11,15 @@ export type IconShape =
   | 'pause-solid'
   | 'volume-xmark-solid'
   | 'volume-high-solid'
-  | 'angles-down-solid';
+  | 'angles-down-solid'
+  | 'plus-solid';
 
 export type IconProps = {
   id?: IconShape;
   title?: string;
   shape: string;
   color?: string;
+  className?: string;
   size?: { width: string | number; height: string | number };
   onClick?: () => void;
 };
@@ -46,6 +48,7 @@ const Icon = ({
   shape,
   color,
   size,
+  className,
   onClick,
   ...restProps
 }: IconProps) => {
@@ -53,7 +56,12 @@ const Icon = ({
 
   return (
     <>
-      <svg id={id} width="100%" height="100%" onClick={onClick}>
+      <svg
+        id={id}
+        width="100%"
+        height="100%"
+        onClick={onClick}
+        className={className}>
         <use
           id={id}
           aria-label={title}
