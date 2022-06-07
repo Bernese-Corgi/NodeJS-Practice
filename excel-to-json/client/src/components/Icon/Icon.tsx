@@ -5,6 +5,8 @@ import React, { ReactComponentElement, ReactNode } from 'react';
 export type IconShape =
   | 'arrow-rotate-left-solid'
   | 'arrow-rotate-right-solid'
+  | 'backward-solid'
+  | 'forward-solid'
   | 'backward-step-solid'
   | 'forward-step-solid'
   | 'play-solid'
