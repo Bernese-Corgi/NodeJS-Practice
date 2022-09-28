@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npx nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/bigquery-connection": "^2.0.2"
-  }
+    "@google-cloud/bigquery": "^6.0.3",
+    "@google-cloud/bigquery-connection": "^2.0.2",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1"
+  },
+  "type": "module"
 }
